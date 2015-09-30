@@ -6,6 +6,6 @@ wget --no-check-certificate -qO - https://github.com/gythialy/chinalist/raw/mast
 wget --no-check-certificate -qO - https://github.com/JinsongVan/chinalist/raw/master/china_mobile_list.txt | grep ^\|\|[^\*]*\^$ | sed -e 's:||:address\=\/:' -e 's:\^:/127\.0\.0\.1:' > /etc/dnsmasq.d/china_mobile_list.conf
 
 wget --no-check-certificate -qO - http://winhelp2002.mvps.org/hosts.txt | awk '{if(/^#/||/^$/) {print $0} else {print "address=/"$2"/"$1"\t"$3,"\n""server=/"$2"/#"}}' > /etc/dnsmasq.d/mvps.conf
-wget --no-check-certificate -qO - http://someonewhocares.org/hosts/hosts | awk '{if(/^#/||/^$/) {print $0} else {print "address=/"$2"/"$1"\t"$3,"\n""server=/"$2"/#"}}' > /etc/dnsmasq.d/someonewhocares.conf
+#wget --no-check-certificate -qO - http://someonewhocares.org/hosts/hosts | awk '{if(/^#/||/^$/) {print $0} else {print "address=/"$2"/"$1"\t"$3,"\n""server=/"$2"/#"}}' > /etc/dnsmasq.d/someonewhocares.conf
 wget --no-check-certificate -qO - http://www.malwaredomainlist.com/hostslist/hosts.txt | awk '{if(/^#/||/^$/) {print $0} else {print "address=/"$2"/"$1"\t"$3,"\n""server=/"$2"/#"}}' > /etc/dnsmasq.d/malwaredomainlist.conf
-wget --no-check-certificate -qO - https://raw.githubusercontent.com/vokins/simpleu/master/hosts > /etc/dnsmasq.d/simpleu.txt
+#wget --no-check-certificate -qO - https://raw.githubusercontent.com/vokins/simpleu/master/hosts > /etc/dnsmasq.d/simpleu.txt
